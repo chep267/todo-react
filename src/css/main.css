@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid green;
+    color: #038cf5;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
