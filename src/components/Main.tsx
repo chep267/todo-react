@@ -39,12 +39,14 @@ export default function Main() {
         <main className="main">
             <div className="form-login">
                 <label htmlFor="account">Account:</label>
-                <input
-                    name="account"
-                    type="text"
-                    value={account}
-                    onChange={onChangeAccount}
-                />
+                <div className="input-password-wrap">
+                    <input
+                        name="account"
+                        type="text"
+                        value={account}
+                        onChange={onChangeAccount}
+                    />
+                </div>
 
                 <label htmlFor="password">Password:</label>
                 <div className="input-password-wrap">
