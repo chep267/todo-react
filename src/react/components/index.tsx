@@ -16,7 +16,7 @@ import LanguageProvider from '@module-language/components/LanguageProvider';
 import AuthProvider from '@module-auth/components/AuthProvider';
 
 /** screens */
-import MainScreen from '@module-global/screens/MainScreen';
+import MainScreen from '@src/todo/screens/Main.tsx';
 
 /** global styles */
 import './global.css';

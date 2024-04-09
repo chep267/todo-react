@@ -19,7 +19,9 @@ type InputEmailProps<T extends FieldValues> = {
     errorMessage?: string;
 };
 
-export default function InputEmail<T extends FieldValues>(props: InputEmailProps<T>) {
+export default function InputEmail<T extends FieldValues>(
+    props: InputEmailProps<T>
+) {
     const { name, control, error, errorMessage } = props;
 
     return (
@@ -32,14 +34,20 @@ export default function InputEmail<T extends FieldValues>(props: InputEmailProps
                         {...field}
                         inputRef={ref}
                         type="email"
-                        label={<FormattedMessage id="module.auth.input.label.email" />}
+                        label={
+                            <FormattedMessage id="module.auth.input.label.email" />
+                        }
                         variant="outlined"
                         spellCheck={false}
                         fullWidth
                         autoComplete="email"
                         autoFocus // eslint-disable-line jsx-a11y/no-autofocus
                         error={error}
-                        helperText={errorMessage ? <FormattedMessage id={errorMessage} /> : undefined}
+                        helperText={
+                            errorMessage ? (
+                                <FormattedMessage id={errorMessage} />
+                            ) : undefined
+                        }
                     />
                 );
             }}
