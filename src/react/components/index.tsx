@@ -4,35 +4,35 @@
  *
  */
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { QueryClientProvider } from '@tanstack/react-query';
 
-import Header from '@components/Header';
-import Login from '@components/Login';
-import Home from '@components/Home';
+/** utils */
+import { queryClient } from '@root/utils/queryClient.ts';
+
+/** providers */
+import NotifyProvider from '@module-base/components/NotifyProvider';
+import ThemeProvider from '@module-theme/components/ThemeProvider';
+import LanguageProvider from '@module-language/components/LanguageProvider';
+import AuthProvider from '@module-auth/components/AuthProvider';
+
+/** screens */
+import MainScreen from '@module-global/screens/MainScreen';
 
 /** global styles */
 import './global.css';
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Login />,
-    },
-    {
-        path: '/login',
-        element: <Login />,
-    },
-    {
-        path: '/home',
-        element: <Home />,
-    },
-]);
-
 export default function App() {
     return (
-        <>
-            <Header />
-            <RouterProvider router={router} />
-        </>
+        <QueryClientProvider client={queryClient}>
+            <ThemeProvider>
+                <LanguageProvider>
+                    <NotifyProvider>
+                        <AuthProvider>
+                            <MainScreen />
+                        </AuthProvider>
+                    </NotifyProvider>
+                </LanguageProvider>
+            </ThemeProvider>
+        </QueryClientProvider>
     );
 }
