@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /** components */
 
@@ -9,6 +10,7 @@ export default function Main() {
     const [account, setAccount] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [isShowPass, setShowPass] = React.useState(false);
+    const navigate = useNavigate();
 
     const onChangeAccount = (event) => {
         const text = event.target.value;
@@ -20,13 +22,11 @@ export default function Main() {
         setPassword(text);
     };
 
-    const onSubmit = (data) => {
-        console.log('data: ', account, ' - ', password);
-        fetch('https://localhost:8080', {
-            method: 'post',
-            body: { account, password },
-        });
-        alert(`Ban dang login
+    const onSubmit = () => {
+        if (account === 'test123' && password === '123456') {
+            return navigate('/home');
+        }
+        alert(`Tai khoan mat khau sai!!!
         Account: ${account}
         Password: ${password}`);
     };
