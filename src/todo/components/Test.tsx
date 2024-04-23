@@ -11,10 +11,10 @@ export default function Test(props = {}) {
      * useRef
      */
     // => luon khai bao lai sau khi render hoac re-render!
-    const arr = [1, 2, 3, 4, 5];
+    const arr1 = [1, 2, 3, 4, 5];
     // => khai bao 1 lan duy nhat
     const elem = React.useRef<HTMLDivElement | null>(null);
-    const arr = React.useRef([1, 2, 3, 4, 5]);
+    const arr2 = React.useRef([1, 2, 3, 4, 5]);
 
     // chay 1 lan duy nhat, sau khi component render lan dau tien!
     React.useEffect(() => {
@@ -69,7 +69,7 @@ export default function Test(props = {}) {
     }, []);
     // => goi ham nay lan dau mat 1 phut tinh toan
     // => neu bien count thay doi, ham phai chay lai tu dau
-    const getSum2 = React.useMemo(() => {
+    const getSum3 = React.useMemo(() => {
         // vi du tinh toan nay mat 1 phut
         const sum = 1 + 2 + count;
         return sum;
