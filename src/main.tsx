@@ -9,9 +9,10 @@ import ReactDOM from 'react-dom/client';
 
 /** App */
 import App from '@root/components';
+import Test from '@src/todo/components/Test.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
+    // <React.StrictMode>
+    <Test />
+    // </React.StrictMode>
 );
